@@ -1,0 +1,33 @@
+
+FUNCTION palind_rec(str:STRING,i,j:INTEGER) : BOOLEAN
+VAR
+    test:BOOLEAN:=true
+BEGIN
+WHILE (i<j) DO
+    IF (str[i]!=str[j]) THEN
+        test:=false
+                    
+    ELSE 
+        palind_rec(str,i+1,j-1)
+        
+    END_IF 
+END_WHILE 
+    RETURN test;
+
+END
+ALGORITHM palindromm
+VAR
+    str:STRING;
+    i,j:INTEGER
+BEGIN
+    i:=0
+    j:=str.length-1
+        IF (palind_rec(str,i,j)) THEN
+            Write('palindrom')
+        ELSE
+            Write('n est pas palindrom')        
+        END_IF 
+        
+        
+    
+END
